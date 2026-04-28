@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="icon.png" />
     <title>Devotio – Sua jornada espiritual no bolso</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -89,6 +90,18 @@
         color: var(--gold);
         letter-spacing: 0.08em;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(62%) sepia(40%)
+          saturate(600%) hue-rotate(5deg) brightness(90%);
+        opacity: 0.9;
       }
 
       .nav-links {
@@ -443,7 +456,10 @@
     <div class="glow"></div>
 
     <nav>
-      <a class="nav-logo" href="/">Devotio</a>
+      <a class="nav-logo" href="/">
+        <img src="icon1.png" alt="Devotio" class="nav-icon" />
+        Devotio
+      </a>
       <div class="nav-links">
         <a href="/politica-de-privacidade">Privacidade</a>
         <a
