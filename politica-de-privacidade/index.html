@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Política de Privacidade – Devotio</title>
+    <link rel="icon" type="image/png" href="icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <style>
+
       *,
       *::before,
       *::after {
@@ -78,6 +80,7 @@
         text-transform: uppercase;
         transition: color 0.2s;
       }
+
       nav a.back:hover {
         color: var(--gold);
       }
@@ -148,6 +151,7 @@
         margin: 0.5rem 0 0.8rem;
         padding-left: 1.2rem;
       }
+
       ul li {
         position: relative;
         font-size: 0.95rem;
@@ -155,6 +159,7 @@
         padding-left: 1rem;
         margin-bottom: 0.4rem;
       }
+
       ul li::before {
         content: "–";
         position: absolute;
@@ -172,6 +177,7 @@
         text-decoration: underline;
         text-decoration-color: rgba(201, 168, 76, 0.3);
       }
+
       a:hover {
         text-decoration-color: var(--gold);
       }
@@ -187,13 +193,34 @@
         color: rgba(245, 240, 232, 0.25);
         letter-spacing: 0.05em;
       }
+
       footer a {
         color: rgba(201, 168, 76, 0.5);
         text-decoration: none;
         transition: color 0.2s;
       }
+      
       footer a:hover {
         color: var(--gold);
+      }
+
+      .nav-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: var(--gold);
+        letter-spacing: .08em;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .nav-icon {
+        width: 26px; height: 26px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(62%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(90%);
+        opacity: .9;
       }
 
       @keyframes fadeUp {
@@ -212,11 +239,15 @@
           padding: 1.2rem 1.5rem;
         }
       }
+      
     </style>
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="/">Devotio</a>
+        <a class="nav-logo" href="/">
+        <img src="/icon1.png" alt="Devotio" class="nav-icon" />
+        Devotio
+      </a>
       <a class="back" href="/">← Início</a>
     </nav>
 
