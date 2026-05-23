@@ -190,11 +190,11 @@
     }
 
     .phone-frame {
-      width: 310px;
-      height: 551px; 
+      width: 300px;
+      height: 562px; /* proporcional a 572x1072 */
       background: #161412;
-      border-radius: 44px;
-      border: 12px solid #23201d;
+      border-radius: 40px;
+      border: 10px solid #23201d;
       box-shadow: 0 50px 100px rgba(0,0,0,.7), 0 0 0 1px rgba(201,168,76,.1);
       position: relative; 
       overflow: hidden;
@@ -203,9 +203,10 @@
     }
 
     .phone-notch {
-      width: 110px; height: 30px;
-      background: #23201d; border-radius: 0 0 18px 18px;
+      width: 90px; height: 22px;
+      background: #23201d; border-radius: 0 0 14px 14px;
       margin: 0 auto; position: relative; z-index: 10;
+      flex-shrink: 0;
     }
 
     .phone-screen {
@@ -231,7 +232,8 @@
       width: 100%; 
       height: 100%;
       scroll-snap-align: start;
-      object-fit: contain; 
+      object-fit: cover;
+      object-position: top;
       background-color: #0c0a09; 
     }
 
@@ -437,6 +439,98 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── Doação iPhone ── */
+    .donation-section {
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto;
+      padding: 8rem 4rem;
+      text-align: center;
+    }
+
+    .donation-eyebrow {
+      display: inline-flex; align-items: center; gap: .8rem;
+      font-size: .75rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .donation-eyebrow::before, .donation-eyebrow::after {
+      content: ""; display: block; width: 24px; height: 1px;
+      background: var(--gold); opacity: .5;
+    }
+
+    .donation-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400; line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--cream);
+    }
+    .donation-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+    .donation-text {
+      font-size: 1rem; line-height: 1.85;
+      color: var(--muted);
+      max-width: 600px; margin: 0 auto 3rem;
+    }
+
+    .donation-card {
+      background: var(--mid);
+      border: 1px solid rgba(201,168,76,.20);
+      border-radius: 12px;
+      padding: 2.8rem 3rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
+      position: relative; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.35);
+    }
+    .donation-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.06) 0%, transparent 70%);
+    }
+
+    .donation-apple-icon {
+      width: 52px; height: 52px; fill: var(--gold); opacity: .9;
+      position: relative;
+    }
+
+    .donation-quote {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--cream); line-height: 1.75;
+      max-width: 540px; position: relative;
+    }
+
+    .btn-donate {
+      display: inline-flex; align-items: center; gap: .75rem;
+      background: var(--gold); color: var(--ink);
+      text-decoration: none; padding: 1.1rem 2.6rem;
+      font-size: .9rem; font-weight: 600; letter-spacing: .04em;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(201,168,76,.2);
+      transition: var(--transition);
+      position: relative;
+    }
+    .btn-donate:hover {
+      background: var(--gold-light); transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,168,76,.35);
+    }
+    .btn-donate svg { width: 18px; height: 18px; fill: var(--ink); flex-shrink: 0; }
+
+    .donation-share {
+      font-size: .8rem; color: var(--muted);
+      letter-spacing: .04em; position: relative;
+    }
+    .donation-share a {
+      color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,.3);
+      padding-bottom: 1px; transition: var(--transition);
+    }
+    .donation-share a:hover { border-color: var(--gold); }
+
+    @media (max-width: 960px) {
+      .donation-section { padding: 6rem 2rem; }
+      .donation-card { padding: 2rem 1.5rem; }
+    }
+
     
     @media (max-width: 960px) {
       nav { padding: 1.2rem 2rem; }
@@ -449,7 +543,7 @@
       .hero-sub { max-width: 100%; }
       .hero-cta { justify-content: center; }
       .hero-visual { order: -1; }
-      .phone-frame { width: 260px; height: 470px; border-width: 8px; border-radius: 36px; }
+      .phone-frame { width: 250px; height: 469px; border-width: 8px; border-radius: 36px; }
       .carousel-btn { width: 38px; height: 38px; }
       .carousel-btn-left { left: -14px; }
       .carousel-btn-right { right: -14px; }
@@ -541,6 +635,38 @@
       </div>
     </div>
   </div>
+
+  <!-- Seção de Doação – Lançamento no iPhone -->
+  <section class="donation-section">
+    <p class="donation-eyebrow">Ajude a levar o Devotio ao iPhone</p>
+    <h2 class="donation-title">
+      Vaquinha para o<br /><em>lançamento no iOS</em>
+    </h2>
+    <p class="donation-text">
+      O Devotio nasceu como um app 100% gratuito e sem anúncios. Para levar essa missão também ao iPhone, precisamos cobrir os custos da Apple Developer Account e da publicação na App Store. Qualquer contribuição faz a diferença — e divulgar também ajuda muito!
+    </p>
+    <div class="donation-card">
+      <svg class="donation-apple-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+
+      <p class="donation-quote">
+        "Criei essa vaquinha <em>Ajude o Devotio a Chegar ao iPhone</em> e agradeço muito se puder me ajudar, doando ou mesmo divulgando para seus amigos e familiares!"
+      </p>
+
+      <a class="btn-donate" href="https://www.vakinha.com.br/6131690?utm_campaign=whatsapp&utm_medium=website&utm_content=6131690&utm_source=social-shares" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5v-4h3l-4-4-4 4h3v4h2z"/>
+        </svg>
+        Quero apoiar o Devotio no iPhone
+      </a>
+
+      <p class="donation-share">
+        Não pode ajudar financeiramente?
+        <a href="https://www.vakinha.com.br/6131690?utm_campaign=whatsapp&utm_medium=website&utm_content=6131690&utm_source=social-shares" target="_blank" rel="noopener">Compartilhe o link</a> — isso também ajuda muito! 🙏
+      </p>
+    </div>
+  </section>
 
   <section class="features-section">
     <div class="section-header">
